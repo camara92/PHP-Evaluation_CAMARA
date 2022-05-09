@@ -27,7 +27,7 @@ if ($_POST) {
         $photo = strip_tags($_POST['photo']);
         $types = strip_tags($_POST['types']);
         $descriptions = strip_tags($_POST['descriptions']);
-
+        //inertion 
         $sql = 'INSERT INTO `logement` (`titre`, `adresse`, `ville`,`cp`, `surface`,`prix`, `photo`, `types`,`descriptions`) VALUES (:titre, :adresse, :ville, :cp, :surface, :prix, :photo, :types, :descriptions);';
 
         $query = $db->prepare($sql);
