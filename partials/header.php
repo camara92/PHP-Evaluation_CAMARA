@@ -14,14 +14,12 @@
     <header class="text-center">
         <nav class="navbar navbar-expand navbar-dark bg-dark ">
     
-            <a href="index.php" class="navbar-brand text-danger"> Agence immobilier </a>
+            <a href="" class="navbar-brand text-danger"> Agence immobilier </a>
             <ul class="navbar-nav">
                 <li class="nav-item" >
                     <a href="produits.php" class="nav-link">Produits </a>
                 </li>
-                <li class="nav-item" >
-                    <a href="drivers.php" class="nav-link">Commandes</a>
-                </li>
+               
             </ul>
         
         </nav>
