@@ -1,8 +1,3 @@
-quelques notes à mettre .............
-lien wf3 du priojet : https://wf3.webforce.life/edm?rootFolder=/api/folders/38833
-
-
-**************SQL DATA ***************************
 -- phpMyAdmin SQL Dump
 -- version 5.1.1
 -- https://www.phpmyadmin.net/

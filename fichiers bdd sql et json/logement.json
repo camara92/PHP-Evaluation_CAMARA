@@ -1,0 +1,14 @@
+[
+{"type":"header","version":"5.1.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"immobilier"},
+{"type":"table","name":"logement","database":"immobilier","data":
+[
+{"id_logement":"1","titre":"Studio E950","adresse":"22 Route du Rhin ","ville":"Illkirch","cp":"67400","surface":"20","prix":"380","photo":"assets\/images\/logement.jpg","types":"location","descriptions":"CROUS"},
+{"id_logement":"2","titre":"Studio E95","adresse":"14 Route de la Wantzenau ","ville":"Strasbourg","cp":"67000","surface":"20","prix":"380","photo":"assets\/images\/logement.jpg","types":"location","descriptions":"Logement étudiant "},
+{"id_logement":"4","titre":"Maison familiale ","adresse":"15 rue de la Gascogne","ville":"Cambrai","cp":"59000","surface":"50","prix":"750","photo":"assets\/images\/maison1.jpg","types":"location","descriptions":"Belle appartement de 4 pièces pour une famille "},
+{"id_logement":"10","titre":"Maison familiale ","adresse":"15 rue de la Gascogne","ville":"Cambrai","cp":"59000","surface":"50","prix":"750","photo":"assets\/images\/maison1.jpg","types":"location","descriptions":"Belle appartement de 4 pièces pour une famille "},
+{"id_logement":"9","titre":"Studio E95","adresse":"14 Route de la Wantzenau ","ville":"Strasbourg","cp":"67000","surface":"20","prix":"380","photo":"assets\/images\/logement.jpg","types":"location","descriptions":"Logement étudiant "},
+{"id_logement":"8","titre":"Studio E950","adresse":"22 Route du Rhin ","ville":"Illkirch","cp":"67400","surface":"20","prix":"380","photo":"assets\/images\/logement.jpg","types":"location","descriptions":"CROUS"}
+]
+}
+]
