@@ -50,13 +50,19 @@ session_start();
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <style>
+            p{
+                border-top : 0.1px solid lightgray;
+            }
+        </style>
         <title>Details </title>
     </head>
     <body>
         <main class="container my-2">
             <div class="row border ">
-                <section class="col">
+                <section  class="col ">
                     <h1 class="text-center ">Détail du prouit : <?=$produit['titre'] ?></h1>
+                    <hr>
                     <p>ID : <?=$produit['id_logement'] ?></p>
                     <p>Titre de logement : <?=$produit['titre'] ?></p>
                     <p>Adresse du logement : <?=$produit['adresse'] ?></p>
@@ -64,7 +70,8 @@ session_start();
                     <p>Code postale : <?=$produit['cp'] ?></p>
                     <p>Surface : <?=$produit['surface'] ?>m²</p>
                     <p>Prix : <?=$produit['prix'] ?>&euro;</p>
-                    <p>Photo : <?=$produit['photo'] ?></p>
+                    <!-- <p>Photo : <?=$produit['photo'] ?></p> -->
+                    <p>Photo : <img src="<?= $produit['photo'] ?>" alt="images" width="250px" height="150px"></p>
                     <p>Type : <?=$produit['types'] ?></p>
                     <p>Descriptions : <?=$produit['descriptions'] ?></p>
                     <p><a href="index.php" class="border bold border-success bg-dark text-white text-decoration-none p-2 my-4">Retour </a></p>

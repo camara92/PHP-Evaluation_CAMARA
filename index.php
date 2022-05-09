@@ -34,7 +34,7 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
 
-    <main class="container my-2">
+    <main class=" my-2">
         <div class="row">
             <section class="col-12">
                 <!--message erreur -->
@@ -88,7 +88,7 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?= $produit['cp'] ?> </td>
                                 <td><?= $produit['surface'] ?>m² </td>
                                 <td><?= $produit['prix'] ?> &euro;</td>
-                                <td><?= $produit['photo'] ?> </td>
+                                <td><img src="<?= $produit['photo'] ?>" alt="images" width="100px" height="50px"> </td>
                                 <td><?= $produit['types'] ?> </td>
                                 <td><?= $produit['descriptions'] ?> </td>
 
