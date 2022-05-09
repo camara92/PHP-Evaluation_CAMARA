@@ -15,10 +15,10 @@ $query->execute();
 // On stocke le résultat dans un tableau associatif
 $results = $query->fetchAll(PDO::FETCH_ASSOC);
 
-require_once('close.php');
+//require_once('close.php');
 
 ?>
-<?php require_once "partials/header.php" ?>
+<!-- <?php require_once "partials/header.php" ?> -->
 <!DOCTYPE html>
 <html lang="en">
 
