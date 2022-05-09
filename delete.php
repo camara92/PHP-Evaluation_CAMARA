@@ -10,7 +10,7 @@ if(isset($_GET['id_logement']) && !empty($_GET['id_logement'])){
     $id_logement = strip_tags($_GET['id_logement']);
 
     $sql = 'SELECT * FROM `logement` WHERE `id_logement` = :id_logement;';
-
+    //une requête sur l'id et prepare puis execution et à la fin requete de supression de la donnée selon l'id selectionnée
     // On prépare la requête
     $query = $db->prepare($sql);
 

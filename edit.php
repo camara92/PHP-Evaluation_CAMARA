@@ -86,7 +86,7 @@ if ($_POST) {
         $id_logement = strip_tags($_GET['id_logement']);
 
         $sql = "SELECT * FROM `logement` WHERE id_logement= :id_logement ";
-        //onprepare la requete 
+        //onprepare la requete et de l'id selctionné 
 
         $query = $db->prepare($sql); 
         //accrocher les params (id_logement)
