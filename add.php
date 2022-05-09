@@ -4,28 +4,47 @@ session_start();
 
 if ($_POST) {
     if (
-        isset($_POST['produit']) && !empty($_POST['produit'])
+        isset($_POST['titre']) && !empty($_POST['titre'])
+        && isset($_POST['adresse']) && !empty($_POST['adresse'])
+        && isset($_POST['ville']) && !empty($_POST['ville'])
+        && isset($_POST['cp']) && !empty($_POST['cp'])
+        && isset($_POST['surface']) && !empty($_POST['surface'])
         && isset($_POST['prix']) && !empty($_POST['prix'])
-        && isset($_POST['nombre']) && !empty($_POST['nombre'])
+        && isset($_POST['photo']) && !empty($_POST['photo'])
+        && isset($_POST['types']) && !empty($_POST['types'])
+        && isset($_POST['descriptions']) && !empty($_POST['descriptions'])
     ) {
         // On inclut la connexion à la base
         require_once('connec.php');
 
         // On nettoie les données envoyées
-        $produit = strip_tags($_POST['produit']);
+        $titre = strip_tags($_POST['titre']);
+        $adresse = strip_tags($_POST['adresse']);
+        $ville = strip_tags($_POST['ville']);
+        $cp = strip_tags($_POST['cp']);
+        $surface = strip_tags($_POST['surface']);
         $prix = strip_tags($_POST['prix']);
-        $nombre = strip_tags($_POST['nombre']);
+        $photo = strip_tags($_POST['photo']);
+        $types = strip_tags($_POST['types']);
+        $descriptions = strip_tags($_POST['descriptions']);
 
-        $sql = 'INSERT INTO `liste` (`produit`, `prix`, `nombre`) VALUES (:produit, :prix, :nombre);';
+        $sql = 'INSERT INTO `logement` (`titre`, `adresse`, `ville`,`cp`, `surface`,`prix`, `photo`, `types`,`descriptions`) VALUES (:titre, :adresse, :ville, :cp, :surface, :prix, :photo, :types, :descriptions);';
 
         $query = $db->prepare($sql);
 
-        $query->bindValue(':produit', $produit, PDO::PARAM_STR);
-        $query->bindValue(':prix', $prix, PDO::PARAM_STR);
-        $query->bindValue(':nombre', $nombre, PDO::PARAM_INT);
+        $query->bindValue(':titre', $titre, PDO::PARAM_STR);
+        $query->bindValue(':adresse', $adresse, PDO::PARAM_STR);
+        $query->bindValue(':ville', $ville, PDO::PARAM_STR);
+        $query->bindValue(':cp', $cp, PDO::PARAM_INT);
+        $query->bindValue(':surface', $surface, PDO::PARAM_INT);
+        $query->bindValue(':prix', $prix, PDO::PARAM_INT);
+        $query->bindValue(':photo', $photo, PDO::PARAM_STR);
+        $query->bindValue(':types', $types, PDO::PARAM_STR);
+        $query->bindValue(':descriptions', $descriptions, PDO::PARAM_STR);
+
         //PARAM_INT car nombre 
         $query->execute();
-//message confimation d'un ajout de produit 
+        //message confimation d'un ajout de produit 
         $_SESSION['message'] = "Produit ajouté";
         require_once('close.php');
 
@@ -62,8 +81,25 @@ if ($_POST) {
                 <h1>Ajouter un produit</h1>
                 <form method="post">
                     <div class="form-group">
-                        <label for="produit">Produit</label>
-                        <input type="text" id="produit" name="produit" class="form-control">
+                        <label for="titre">Titre du logement</label>
+                        <input types="text" id="produit" name="titre" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="adresse">Adresse </label>
+                        <input types="text" id="adresse" name="adresse" class="form-control">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="ville">Ville</label>
+                        <input types="text" id="ville" name="ville" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="cp">Code postale</label>
+                        <input types="number" id="cp" name="cp" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="surface">Surface en m²</label>
+                        <input type="number" id="surface" name="surface" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="prix">Prix</label>
@@ -71,10 +107,27 @@ if ($_POST) {
 
                     </div>
                     <div class="form-group">
-                        <label for="nombre">Quantité</label>
-                        <input type="number" id="nombre" name="nombre" class="form-control">
+                        <label for="photo">Photo</label>
+                        <input type="file" id="photo" name="photo" class="form-control">
                     </div>
-                   
+                    <div class="form-group">
+                        <!-- <label for="type">Type de logement </label>
+                        <input type="radio" id="type" name="type" class="form-control"> -->
+                        <div>
+                            <input type="radio" id="location" name="types" value="location" checked>
+                            <label for="huey">Location</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="vente" name="types" value="Vente" checked>
+                            <label for="huey">Vente</label>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="descriptions">Descriptions</label>
+                        <input type="text" id="descriptions" name="descriptions" class="form-control">
+
+                    </div>
                     <button class="btn btn-primary">Envoyer</button>
                 </form>
             </section>
