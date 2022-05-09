@@ -66,8 +66,8 @@ if ($_POST) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
-<body>
-    <main class="container">
+<body >
+    <main class="container bg-info">
         <div class="row">
             <section class="col-12">
                 <?php
@@ -79,31 +79,31 @@ if ($_POST) {
                 }
                 ?>
                 <h1>Ajouter un produit</h1>
-                <form method="post">
+                <form method="post" class="bg-light text-center" width="">
                     <div class="form-group">
                         <label for="titre">Titre du logement</label>
-                        <input types="text" id="produit" name="titre" class="form-control">
+                        <input types="text" id="produit" name="titre" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="adresse">Adresse </label>
-                        <input types="text" id="adresse" name="adresse" class="form-control">
+                        <input types="text" id="adresse" name="adresse" class="form-control" required>
 
                     </div>
                     <div class="form-group">
                         <label for="ville">Ville</label>
-                        <input types="text" id="ville" name="ville" class="form-control">
+                        <input types="text" id="ville" name="ville" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="cp">Code postale</label>
-                        <input types="number" id="cp" name="cp" class="form-control">
+                        <input types="number" id="cp" name="cp" required minlength="5" maxlength="5" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="surface">Surface en m²</label>
-                        <input type="number" id="surface" name="surface" class="form-control">
+                        <input type="number" id="surface" name="surface" required class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="prix">Prix</label>
-                        <input type="text" id="prix" name="prix" class="form-control">
+                        <input type="text" id="prix" name="prix" class="form-control" required>
 
                     </div>
                     <div class="form-group">
@@ -111,13 +111,14 @@ if ($_POST) {
                         <input type="file" id="photo" name="photo" class="form-control">
                     </div>
                     <div class="form-group">
+                        <label for="">Type : </label>
                         <!-- <label for="type">Type de logement </label>
                         <input type="radio" id="type" name="type" class="form-control"> -->
-                        <div>
+                        <!-- <div> -->
                             <input type="radio" id="location" name="types" value="location" checked>
                             <label for="huey">Location</label>
-                        </div>
-                        <div>
+                        <!-- </div>
+                        <div> -->
                             <input type="radio" id="vente" name="types" value="Vente" checked>
                             <label for="huey">Vente</label>
                         </div>

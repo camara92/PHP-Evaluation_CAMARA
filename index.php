@@ -96,7 +96,7 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
 
                                     <a href="details.php?id_logement=<?= $produit['id_logement'] ?>" class="border bold border-success bg-info text-dark text-decoration-none p-2 my-4">voir</a>
                                     <a href="edit.php?id_logement=<?= $produit['id_logement'] ?>" class="border bold border-success bg-info text-dark text-decoration-none p-2 my-4">Edit</a>
-                                    <a href="delete.php?id_logemen=<?= $produit['id_logement'] ?>" class="border bold border-success bg-info text-dark text-decoration-none p-2 my-4">Supp</a>
+                                    <a href="delete.php?id_logement=<?= $produit['id_logement'] ?>" class="border bold border-success bg-info text-dark text-decoration-none p-2 my-4">Supp</a>
                                 </td>
 
                             </tr>

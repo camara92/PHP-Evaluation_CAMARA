@@ -7,15 +7,15 @@ if(isset($_GET['id_logement']) && !empty($_GET['id_logement'])){
     require_once('connec.php');
 
     // On nettoie l'id envoyé
-    $id = strip_tags($_GET['id_logement']);
+    $id_logement = strip_tags($_GET['id_logement']);
 
-    $sql = 'SELECT * FROM `liste` WHERE `id_logement` = :id_logement;';
+    $sql = 'SELECT * FROM `logement` WHERE `id_logement` = :id_logement;';
 
     // On prépare la requête
     $query = $db->prepare($sql);
 
     // On "accroche" les paramètre (id)
-    $query->bindValue(':id_logement', $id, PDO::PARAM_INT);
+    $query->bindValue(':id_logement', $id_logement, PDO::PARAM_INT);
 
     // On exécute la requête
     $query->execute();
@@ -30,13 +30,13 @@ if(isset($_GET['id_logement']) && !empty($_GET['id_logement'])){
         die();
     }
 
-    $sql = 'DELETE FROM `liste` WHERE `id_logement` = :id_logement;';
+    $sql = 'DELETE FROM `logement` WHERE `id_logement` =:id_logement;';
 
     // On prépare la requête
     $query = $db->prepare($sql);
 
     // On "accroche" les paramètre (id)
-    $query->bindValue(':id_logement', $id, PDO::PARAM_INT);
+    $query->bindValue(':id_logement', $id_logement, PDO::PARAM_INT);
 
     // On exécute la requête
     $query->execute();
