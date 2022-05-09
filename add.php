@@ -54,6 +54,28 @@ if ($_POST) {
     }
 }
 
+//upload image 
+//ENVOI DE FICHIERS PHP
+if(isset($_FILES['photo']) && $_FILES['photo']['error'] ==0){  //la photo existe et a été stockée temporairement sur le serveur
+
+	if ($_FILES['photo']['size']<= 3000000){ //photo fait moins de 3MO
+
+		$informationsImage = pathinfo($_FILES['photo']['name']);
+		$extensionImage = $informationsImage['extension'];
+		$extensionsArray = array('png', 'gif', 'jpg', 'jpeg', 'webp'); //extensions qu'on autorise
+
+		if(in_array($extensionImage, $extensionsArray)){  
+
+			move_uploaded_file($_FILES['photo']['tmp_name'], 'assets/images/'.time().basename($_FILES['photo']['name'])); // on renomme notre photo avec une clé unique suivie du nom du fichier
+
+        echo 'Envoi bien réussi !' ;
+
+        }
+	}
+}
+
+//end uploads 
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -79,7 +101,7 @@ if ($_POST) {
                 }
                 ?>
                 <h1>Ajouter un produit</h1>
-                <form method="post" class="bg-light text-center" width="">
+                <form action="add.php" method="post" class="bg-light text-center" width="">
                     <div class="form-group">
                         <label for="titre">Titre du logement</label>
                         <input types="text" id="produit" name="titre" class="form-control" required>
